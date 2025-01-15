@@ -1,9 +1,23 @@
-class Company {
-    public String name; // название
-    public int persons; // количество сотрудников
-    public int money; // месячный фонд зарплаты
+public class Company {
+    /**
+     * Название
+     */
+    public String name;
+    /**
+     * Количество сотрудников
+     */
+    public int persons;
+    /**
+     * Месячный фонд зарплаты
+     */
+    public int money;
 
-    // конструктор
+    /**
+     * Конструктор
+     * @param name
+     * @param persons
+     * @param money
+     */
     public Company(String name, int persons, int money) {
         this.name = name;
         this.persons = persons;
@@ -16,14 +30,6 @@ class Company {
     }
 
     public int averageSalary() {
-        return money / persons;
-    }
-
-    public int maxPersons(int salary) {
-        return money / salary;
-    }
-
-    public int negative(int negative1 /* налог в % */, int negative2 /* отчисление в ПФ в % */) {
-        return money * (negative1 + negative2) / 100;
+        return persons > 0 ? money / persons : 0;
     }
 }
